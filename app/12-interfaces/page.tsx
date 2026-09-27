@@ -1,4 +1,5 @@
 import Figure from "../_lib/Figure";
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "12. Interfaces" };
@@ -106,6 +107,41 @@ export default function Page() {
           code={`builder.Services.AddScoped<IEmailSender, SmtpEmailSender>();`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "How many interfaces can one class implement?",
+            options: [
+              "One",
+              "Two",
+              "As many as it wants",
+            ],
+            answer: 2,
+            explanation: "A class has only one base class, but can implement many interfaces.",
+          },
+          {
+            q: "What does an interface describe?",
+            options: [
+              "What a class can do, not how",
+              "How a class stores its data",
+              "Which base class to inherit from",
+            ],
+            answer: 0,
+            explanation: "It is a contract; each implementing class decides how.",
+          },
+          {
+            q: "Which of these can an abstract class have but an interface cannot?",
+            options: [
+              "Methods",
+              "Instance fields and constructors",
+              "Public members",
+            ],
+            answer: 1,
+            explanation: "Interfaces are for decoupling, abstract classes for sharing code.",
+          },
+        ]}
+      />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "10. Method Overriding" };
@@ -74,6 +75,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "What does marking a base method `virtual` allow?",
+            options: [
+              "Derived classes can replace it with `override`",
+              "Calling it without an object",
+              "Nothing can change it",
+            ],
+            answer: 0,
+            explanation: "At runtime C# calls the version of the real object, even through a base-type variable.",
+          },
+          {
+            q: "How can an override still run the original code?",
+            options: [
+              "Copy the base code into it",
+              "Call `base.Method()`",
+              "Call `this.Method()`",
+            ],
+            answer: 1,
+            explanation: "Use it to add behavior before or after instead of replacing it.",
+          },
+          {
+            q: "The base method is not `virtual`, and a derived class declares a method with the same name. What happens?",
+            options: [
+              "It overrides the base method anyway",
+              "Nothing: both run on every call",
+              "It only hides it, so calls through a base-type variable run the base version",
+            ],
+            answer: 2,
+            explanation: "Without `virtual` and `override`, the method is hidden, not overridden.",
+          },
+        ]}
+      />
     </>
   );
 }

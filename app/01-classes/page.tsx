@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "01. Classes & Objects" };
@@ -66,6 +67,41 @@ export default function Page() {
           leaks data between users and breaks under load.
         </p>
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "What does a `static` member belong to?",
+            options: [
+              "Each object separately",
+              "The class itself, shared by everyone",
+              "Only the first object created",
+            ],
+            answer: 1,
+            explanation: "There is only one copy, and you call it on the class name.",
+          },
+          {
+            q: "Inside an instance method, what does `this` refer to?",
+            options: [
+              "The current object",
+              "The class itself",
+              "The method's return value",
+            ],
+            answer: 0,
+            explanation: "Returning `this` lets callers chain method calls.",
+          },
+          {
+            q: "Why should a Web API avoid static fields?",
+            options: [
+              "They are slower than instance fields",
+              "They cannot hold strings",
+              "They are shared by every request and leak data between users",
+            ],
+            answer: 2,
+            explanation: "Controllers are created per request, but static state lives for the whole app.",
+          },
+        ]}
+      />
     </>
   );
 }

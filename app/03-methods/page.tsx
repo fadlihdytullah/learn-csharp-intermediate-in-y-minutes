@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "03. Methods" };
@@ -72,6 +73,41 @@ export default function Page() {
     $"Page {page}, {pageSize} per page");`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Which of these is part of a method's signature?",
+            options: [
+              "The return type",
+              "The parameter types",
+              "The method body",
+            ],
+            answer: 1,
+            explanation: "A signature is the name plus the number and types of the parameters.",
+          },
+          {
+            q: "How does `int.TryParse` report its result?",
+            options: [
+              "It throws an exception on failure",
+              "It returns a tuple",
+              "It returns a `bool` and puts the number in an `out` parameter",
+            ],
+            answer: 2,
+            explanation: "This is the TryX pattern, the one common use of `out`.",
+          },
+          {
+            q: "What does `params` on the last parameter let callers do?",
+            options: [
+              "Pass zero, one, or many values without building an array",
+              "Pass arguments in any order",
+              "Change the caller's variable",
+            ],
+            answer: 0,
+            explanation: "The compiler builds the array for you.",
+          },
+        ]}
+      />
     </>
   );
 }

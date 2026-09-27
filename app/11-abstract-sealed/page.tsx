@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "11. Abstract & Sealed" };
@@ -119,6 +120,41 @@ public sealed class ProductsController : ControllerBase
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "`Shape` is an abstract class. Can you write `new Shape()`?",
+            options: [
+              "Yes, like any class",
+              "No, it does not compile",
+              "Only inside a derived class",
+            ],
+            answer: 1,
+            explanation: "You can still use `Shape` as a variable or list type.",
+          },
+          {
+            q: "What must a derived class do with an abstract method?",
+            options: [
+              "`override` it",
+              "Nothing, it inherits the body",
+              "Mark it `sealed`",
+            ],
+            answer: 0,
+            explanation: "An abstract member has no body, so the derived class must provide one.",
+          },
+          {
+            q: "What does `sealed` on a class do?",
+            options: [
+              "Makes all its members private",
+              "Stops it from being created",
+              "Stops other classes from inheriting from it",
+            ],
+            answer: 2,
+            explanation: "Many teams seal classes by default and unseal only when needed.",
+          },
+        ]}
+      />
     </>
   );
 }

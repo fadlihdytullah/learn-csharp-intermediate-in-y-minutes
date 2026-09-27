@@ -1,4 +1,5 @@
 import Figure from "../_lib/Figure";
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "13. Dependency Injection" };
@@ -134,6 +135,41 @@ app.MapPost("/orders", (Order order, IShippingCalculator calculator) =>
     new { Shipping = calculator.Calculate(order) });`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "What does dependency injection mean?",
+            options: [
+              "A class creates every object it needs itself",
+              "A class receives its dependencies from outside, usually through the constructor",
+              "A class inherits its dependencies from a base class",
+            ],
+            answer: 1,
+            explanation: "Typed as interfaces, those dependencies can be faked in tests or swapped.",
+          },
+          {
+            q: "Which lifetime gives one instance per HTTP request?",
+            options: [
+              "`AddSingleton`",
+              "`AddTransient`",
+              "`AddScoped`",
+            ],
+            answer: 2,
+            explanation: "In a Web API, one scope is one request.",
+          },
+          {
+            q: "Why should you never inject a scoped service into a singleton?",
+            options: [
+              "The singleton would keep one request's object for every later request",
+              "It does not compile",
+              "Scoped services cannot have constructors",
+            ],
+            answer: 0,
+            explanation: "The singleton lives for the whole app, much longer than the scope.",
+          },
+        ]}
+      />
     </>
   );
 }

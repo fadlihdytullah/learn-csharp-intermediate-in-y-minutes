@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "17. Lambdas & LINQ" };
@@ -146,6 +147,41 @@ export default function Page() {
         .ToListAsync());`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "In `Func<int, string>`, which type is the return type?",
+            options: [
+              "`int`",
+              "`string`",
+              "Neither, `Func` returns nothing",
+            ],
+            answer: 1,
+            explanation: "The last type parameter of `Func` is always the return type.",
+          },
+          {
+            q: "What does `Select` do?",
+            options: [
+              "Keeps items that match a condition",
+              "Returns the first match",
+              "Turns each item into something else",
+            ],
+            answer: 2,
+            explanation: "Filtering is `Where`; `Select` is projection.",
+          },
+          {
+            q: "When does a LINQ query actually run?",
+            options: [
+              "When you loop over it or call a method like `ToList`",
+              "The moment you write it",
+              "Only when the program ends",
+            ],
+            answer: 0,
+            explanation: "This is deferred execution, so looping twice runs it twice.",
+          },
+        ]}
+      />
     </>
   );
 }

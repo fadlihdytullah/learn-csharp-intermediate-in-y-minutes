@@ -1,4 +1,5 @@
 import Figure from "../_lib/Figure";
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "07. Composition" };
@@ -81,6 +82,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "A car has an engine. Which relationship is that?",
+            options: [
+              "is-a, so use inheritance",
+              "has-a, so use composition",
+              "Neither",
+            ],
+            answer: 1,
+            explanation: "Composition builds a class out of other objects.",
+          },
+          {
+            q: "What went wrong when `Walk` was put in the `Animal` base class?",
+            options: [
+              "Fish inherited `Walk` too",
+              "`Walk` could not be called",
+              "Animals could no longer swim",
+            ],
+            answer: 0,
+            explanation: "A base class makes a promise for every class below it.",
+          },
+          {
+            q: "When should you use inheritance?",
+            options: [
+              "Whenever two classes share code",
+              "Whenever it is quicker to write",
+              "Only for a true, stable is-a relationship, usually shallow",
+            ],
+            answer: 2,
+            explanation: "For everything else, favor composition.",
+          },
+        ]}
+      />
     </>
   );
 }

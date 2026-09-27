@@ -1,4 +1,5 @@
 import Figure from "../_lib/Figure";
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "18. Async & Await" };
@@ -98,6 +99,41 @@ async Task SaveAsync() { await db.SaveChangesAsync(); }`}
     await db.Products.ToListAsync(cancellationToken));`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "What does `await` do?",
+            options: [
+              "Blocks the thread until the task finishes",
+              "Pauses the method until the task completes, without blocking the thread",
+              "Starts a new thread for the task",
+            ],
+            answer: 1,
+            explanation: "The thread is free to do other work in the meantime.",
+          },
+          {
+            q: "Why should you avoid `.Result` and `.Wait()` on a task?",
+            options: [
+              "They freeze the thread and can deadlock",
+              "They return the wrong type",
+              "They cancel the task",
+            ],
+            answer: 0,
+            explanation: "Use `await` instead, async all the way.",
+          },
+          {
+            q: "Three calls do not depend on each other. How do you wait for them?",
+            options: [
+              "Await each one in turn",
+              "Make them `async void`",
+              "Start them all and wait once with `Task.WhenAll`",
+            ],
+            answer: 2,
+            explanation: "Awaiting one after another waits for each in turn.",
+          },
+        ]}
+      />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "04. Fields & Access" };
@@ -71,6 +72,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Where can a `readonly` field be assigned?",
+            options: [
+              "Anywhere inside the class",
+              "Only where it is declared or in a constructor",
+              "Anywhere, but only once",
+            ],
+            answer: 1,
+            explanation: "After construction it is fixed for the life of the object.",
+          },
+          {
+            q: "A field is `private readonly List<string> Orders`. What can the class still do?",
+            options: [
+              "Replace it with a new list",
+              "Nothing, the list is frozen",
+              "Add items to the list",
+            ],
+            answer: 2,
+            explanation: "`readonly` protects the field, not the object inside it.",
+          },
+          {
+            q: "What is encapsulation?",
+            options: [
+              "Hiding data in private fields and guarding every change",
+              "Making every field `public`",
+              "Using `const` for every value",
+            ],
+            answer: 0,
+            explanation: "Checking values before they are stored keeps the object valid.",
+          },
+        ]}
+      />
     </>
   );
 }

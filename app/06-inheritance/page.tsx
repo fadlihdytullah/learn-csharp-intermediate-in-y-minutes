@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "06. Inheritance" };
@@ -84,6 +85,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "How many classes can a C# class inherit from?",
+            options: [
+              "As many as it likes",
+              "Two",
+              "One",
+            ],
+            answer: 2,
+            explanation: "When a class needs to play several roles, use interfaces instead.",
+          },
+          {
+            q: "Which relationship does inheritance model?",
+            options: [
+              "is-a",
+              "has-a",
+              "uses-a",
+            ],
+            answer: 0,
+            explanation: "A text box is a presentation object, so it inherits from it.",
+          },
+          {
+            q: "Why does every value in .NET have `ToString()`?",
+            options: [
+              "The compiler adds it to each class",
+              "Every type ends up deriving from `object`",
+              "Because of `using System`",
+            ],
+            answer: 1,
+            explanation: "Even `int` derives from `ValueType`, which derives from `object`.",
+          },
+        ]}
+      />
     </>
   );
 }

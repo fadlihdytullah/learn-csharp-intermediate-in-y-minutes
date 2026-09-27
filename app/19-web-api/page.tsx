@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 const boxes = [
@@ -197,6 +198,41 @@ app.Run();`}
           queries.
         </p>
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Which part of the pipeline matches the URL to your endpoint?",
+            options: [
+              "Middleware",
+              "Routing",
+              "The DI container",
+            ],
+            answer: 1,
+            explanation: "Middleware handles cross-cutting jobs like errors and authentication.",
+          },
+          {
+            q: "Why do products you add disappear when the server restarts?",
+            options: [
+              "They only live in memory",
+              "The client deletes them",
+              "Records cannot be saved",
+            ],
+            answer: 0,
+            explanation: "Real APIs store data in a database, usually through EF Core.",
+          },
+          {
+            q: "Which style groups endpoints into a class with route attributes?",
+            options: [
+              "Minimal API",
+              "Middleware",
+              "Controllers",
+            ],
+            answer: 2,
+            explanation: "Both styles run on the same ASP.NET Core framework.",
+          },
+        ]}
+      />
     </>
   );
 }

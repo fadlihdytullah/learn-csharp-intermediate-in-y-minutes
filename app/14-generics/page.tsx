@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "14. Generics" };
@@ -123,6 +124,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Why use `List<int>` instead of a list that stores `object`?",
+            options: [
+              "It is shorter to type",
+              "Type mistakes are caught at compile time, and there is no boxing",
+              "It can hold values of any type",
+            ],
+            answer: 1,
+            explanation: "The compiler refuses a string before the program ever runs.",
+          },
+          {
+            q: "What does `where T : new()` require?",
+            options: [
+              "`T` must be a value type",
+              "`T` must be a newly declared class",
+              "`T` must have a parameterless constructor",
+            ],
+            answer: 2,
+            explanation: "Constraints narrow what `T` can be and unlock what you can do with it.",
+          },
+          {
+            q: "What does reading a missing key with `stock[\"webcam\"]` do?",
+            options: [
+              "Throws `KeyNotFoundException`",
+              "Returns `null`",
+              "Adds the key with a default value",
+            ],
+            answer: 0,
+            explanation: "Use `TryGetValue` when the key might not exist.",
+          },
+        ]}
+      />
     </>
   );
 }

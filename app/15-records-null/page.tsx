@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "15. Records & Null Safety" };
@@ -141,6 +142,41 @@ Console.WriteLine(middle.Length);`}
 public record ProductResponse(int Id, string Name, decimal Price);`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Two separate record objects hold the same values. Are they equal?",
+            options: [
+              "Yes, records use value equality",
+              "No, they are different objects",
+              "Only if you override `Equals`",
+            ],
+            answer: 0,
+            explanation: "Classes compare by reference; records compare their values.",
+          },
+          {
+            q: "How do you \"change\" a property of a record?",
+            options: [
+              "Assign it directly",
+              "Make a copy with a `with` expression",
+              "Call its `Update` method",
+            ],
+            answer: 1,
+            explanation: "The original stays untouched.",
+          },
+          {
+            q: "What does `a ?? b` mean?",
+            options: [
+              "Assign `b` to `a`",
+              "Throw if `a` is null",
+              "Use `a`, or `b` if `a` is null",
+            ],
+            answer: 2,
+            explanation: "`??=` is the version that assigns only when `a` is null.",
+          },
+        ]}
+      />
     </>
   );
 }

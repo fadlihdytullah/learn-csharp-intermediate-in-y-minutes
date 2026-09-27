@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "09. Casting & Boxing" };
@@ -76,6 +77,41 @@ export default function Page() {
         />
         <p>Lesson 16 covers custom exceptions.</p>
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Which cast can fail at runtime?",
+            options: [
+              "Upcasting",
+              "Downcasting",
+              "Neither",
+            ],
+            answer: 1,
+            explanation: "If the object is not really that type, you get an `InvalidCastException`.",
+          },
+          {
+            q: "What does `shape as Text` give you when `shape` is not a `Text`?",
+            options: [
+              "`null`",
+              "An `InvalidCastException`",
+              "An empty `Text`",
+            ],
+            answer: 0,
+            explanation: "`as` returns `null` instead of throwing.",
+          },
+          {
+            q: "What happens when you store an `int` in an `object` variable?",
+            options: [
+              "It is converted to a string",
+              "Nothing, `int` is already a reference type",
+              "It is boxed: copied into a new object on the heap",
+            ],
+            answer: 2,
+            explanation: "The box is a copy, so changing the original does not change it.",
+          },
+        ]}
+      />
     </>
   );
 }

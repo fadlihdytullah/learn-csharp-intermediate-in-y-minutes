@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "05. Properties & Indexers" };
@@ -78,6 +79,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Inside a property's `set` accessor, which keyword holds the incoming value?",
+            options: [
+              "`this`",
+              "`value`",
+              "`init`",
+            ],
+            answer: 1,
+            explanation: "The data itself usually lives in a private backing field.",
+          },
+          {
+            q: "What happens if a caller leaves out a `required` property in the object initializer?",
+            options: [
+              "It gets its default value",
+              "It throws at runtime",
+              "The code does not compile",
+            ],
+            answer: 2,
+            explanation: "`required` forces the caller to set it when creating the object.",
+          },
+          {
+            q: "What does an `init` accessor allow?",
+            options: [
+              "Setting the property only while creating the object",
+              "Setting it from anywhere, at any time",
+              "Setting it only inside the class",
+            ],
+            answer: 0,
+            explanation: "After creation the property is read-only.",
+          },
+        ]}
+      />
     </>
   );
 }

@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "08. protected & base" };
@@ -101,6 +102,41 @@ export default function Page() {
 }`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "Who can access a `protected` member?",
+            options: [
+              "Any code",
+              "The same class and its derived classes",
+              "Only code in the same assembly",
+            ],
+            answer: 1,
+            explanation: "It stays hidden from the outside world.",
+          },
+          {
+            q: "You create a derived object. Which constructor runs first?",
+            options: [
+              "The base class constructor",
+              "The derived class constructor",
+              "Only the derived one runs",
+            ],
+            answer: 0,
+            explanation: "The base part must be ready before the child builds on it.",
+          },
+          {
+            q: "The base constructor needs arguments. What must the derived constructor do?",
+            options: [
+              "Nothing, constructors are inherited",
+              "Call `new Base(...)` in its body",
+              "Pass them with `: base(...)`",
+            ],
+            answer: 2,
+            explanation: "Without it, the code does not compile.",
+          },
+        ]}
+      />
     </>
   );
 }

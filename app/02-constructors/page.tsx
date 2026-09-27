@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "02. Constructors" };
@@ -76,6 +77,41 @@ public class OrdersController(IOrderService orders) : ControllerBase
         />
         <p>Lesson 13 explains how ASP.NET Core knows what to pass in.</p>
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "A class has no constructor. What value does an `int` field start with?",
+            options: [
+              "`0`",
+              "`null`",
+              "It does not compile",
+            ],
+            answer: 0,
+            explanation: "Numbers default to `0`, `bool` to `false`, and reference types to `null`.",
+          },
+          {
+            q: "You add a constructor that takes an id and a name. What happens to the parameterless default constructor?",
+            options: [
+              "It still exists",
+              "It becomes private",
+              "It disappears",
+            ],
+            answer: 2,
+            explanation: "Once you write any constructor, C# no longer adds the free default one.",
+          },
+          {
+            q: "What does `: this(...)` do after a constructor's parameters?",
+            options: [
+              "Calls the base class constructor",
+              "Calls another constructor of the same class first",
+              "Creates a copy of the object",
+            ],
+            answer: 1,
+            explanation: "Chaining keeps the setup code in one place.",
+          },
+        ]}
+      />
     </>
   );
 }

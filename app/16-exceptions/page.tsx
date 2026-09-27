@@ -1,3 +1,4 @@
+import Quiz from "../_lib/Quiz";
 import Source from "../_lib/Source";
 
 export const metadata = { title: "16. Exceptions" };
@@ -98,6 +99,41 @@ app.MapGet("/products/{id}", (int id, IProductStore store) =>
 });`}
         />
       </div>
+
+      <Quiz
+        questions={[
+          {
+            q: "When does a `finally` block run?",
+            options: [
+              "Only if no exception was thrown",
+              "Only after a `catch` runs",
+              "Either way, exception or not",
+            ],
+            answer: 2,
+            explanation: "That makes it the place for cleanup.",
+          },
+          {
+            q: "In what order should you write `catch` blocks?",
+            options: [
+              "Specific types first, general `Exception` last",
+              "General `Exception` first",
+              "The order does not matter",
+            ],
+            answer: 0,
+            explanation: "Catch blocks are checked top to bottom, and the first match wins.",
+          },
+          {
+            q: "Why should you never write `throw ex;` in a `catch`?",
+            options: [
+              "It does not compile",
+              "It resets the stack trace",
+              "It swallows the exception",
+            ],
+            answer: 1,
+            explanation: "Write `throw;` to pass the same exception up unchanged.",
+          },
+        ]}
+      />
     </>
   );
 }
