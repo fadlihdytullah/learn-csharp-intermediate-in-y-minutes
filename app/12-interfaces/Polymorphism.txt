@@ -1,0 +1,3 @@
+Email -> Ada: Payment received.
+SMS   -> Ada: Payment received.
+Push  -> Ada: Payment received.

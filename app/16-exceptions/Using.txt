@@ -1,0 +1,4 @@
+Opened orders-db
+Running: SELECT * FROM Orders
+Closed orders-db
+Error: The query took too long.

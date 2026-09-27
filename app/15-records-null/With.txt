@@ -1,0 +1,4 @@
+Product { Name = Keyboard, Price = 49.99 }
+Product { Name = Keyboard, Price = 39.99 }
+Keyboard costs 39.99
+Point { X = 1, Y = 2 } Point { X = 1, Y = 5 }

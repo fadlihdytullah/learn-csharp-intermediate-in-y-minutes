@@ -1,0 +1,3 @@
+25
+Min 3, Max 9
+Min 2, Max 10

@@ -1,0 +1,8 @@
+Mouse (19), Keyboard (49), Webcam (59)
+Monitor
+none
+1299
+True
+3
+1625
+1299

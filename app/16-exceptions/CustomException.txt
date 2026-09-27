@@ -1,0 +1,4 @@
+Withdrew 30
+Cannot withdraw 500, balance is only 70.
+Short by 430
+Balance: 70

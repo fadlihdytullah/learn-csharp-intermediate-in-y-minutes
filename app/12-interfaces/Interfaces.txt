@@ -1,0 +1,2 @@
+Email to ada@example.com: Your order has shipped.
+SMS to +62 812 0000 0000: Your order has shipped.

@@ -1,0 +1,6 @@
+Mice left: 37
+Has webcam? False
+Monitors: 5
+keyboard   12
+mouse      37
+monitor     5

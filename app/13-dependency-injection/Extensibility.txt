@@ -1,0 +1,3 @@
+[info] Migration started
+[info] Migration finished
+migrations.log has 2 lines

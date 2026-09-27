@@ -1,0 +1,2 @@
+Preparing the canvas
+Drawing a circle

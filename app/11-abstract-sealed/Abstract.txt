@@ -1,0 +1,4 @@
+Drawing a circle, radius 2
+  area = 12.57
+Drawing a 3x4 rectangle
+  area = 12.00

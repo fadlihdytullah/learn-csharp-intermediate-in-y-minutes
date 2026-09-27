@@ -1,0 +1,4 @@
+OK       100 / 4 = 25
+Format   "abc" is not a number
+Overflow 99999999999 does not fit in an int
+Other    DivideByZeroException: Attempted to divide by zero.

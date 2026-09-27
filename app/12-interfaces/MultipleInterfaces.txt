@@ -1,0 +1,3 @@
+notes.txt: Interfaces are contracts.
+notes.txt: Interfaces are contracts.
+True

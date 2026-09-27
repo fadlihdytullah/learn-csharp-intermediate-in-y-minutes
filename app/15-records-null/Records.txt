@@ -1,0 +1,4 @@
+ProductRecord { Name = Keyboard, Price = 49.99 }
+records equal: True
+ProductClass
+classes equal: False

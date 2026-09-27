@@ -1,0 +1,2 @@
+[orders] Order 42 placed.
+[orders] Order 43 placed.

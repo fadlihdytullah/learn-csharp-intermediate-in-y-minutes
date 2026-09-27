@@ -1,0 +1,16 @@
+$ curl localhost:5000/products
+[{"id":1,"name":"Keyboard","price":49.99},{"id":2,"name":"Mouse","price":19.99}]
+
+$ curl -i -X POST localhost:5000/products -H "Content-Type: application/json" -d '{"name":"Monitor","price":199}'
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Location: /products/3
+
+{"id":3,"name":"Monitor","price":199}
+
+$ curl localhost:5000/products/3
+{"id":3,"name":"Monitor","price":199}
+
+$ curl -i localhost:5000/products/99
+HTTP/1.1 404 Not Found
+Content-Length: 0

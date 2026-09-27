@@ -1,0 +1,3 @@
+One after another: 1.5s
+All at once:       0.5s
+orders loaded, customers loaded, products loaded

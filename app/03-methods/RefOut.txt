@@ -1,0 +1,5 @@
+20
+Parsed 42
+abc is not a number
+Found Ada
+User 99 not found

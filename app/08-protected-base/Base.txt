@@ -1,0 +1,3 @@
+Vehicle XYZ-1234 initialized.
+Car initialized.
+XYZ-1234
